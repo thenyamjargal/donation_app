@@ -100,7 +100,7 @@ export default function SupportPage() {
       const res = await fetch("/api/donations/recent");
       const data = await res.json();
       if (data.supporters) setRecentSupporters(data.supporters);
-    } catch {}
+    } catch { }
   }, []);
 
   useEffect(() => {
@@ -285,6 +285,9 @@ export default function SupportPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-xl flex items-center justify-center hover:bg-white hover:scale-105 hover:shadow-lg transition-all duration-300"
+                  style={{
+                    background: 'linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
+                  }}
                 >
                   <Instagram className="w-4.5 h-4.5 text-white" />
                 </a>
@@ -413,18 +416,17 @@ export default function SupportPage() {
                         <button
                           key={option.amount}
                           onClick={() => setSelectedAmount(option)}
-                          className={`relative p-3 sm:p-3 rounded-2xl border-2 transition-all duration-300 ${
-                            selectedAmount.amount === option.amount
+                          className={`relative p-3 sm:p-3 rounded-2xl border-2 transition-all duration-300 ${selectedAmount.amount === option.amount
                               ? "scale-[1.02]"
                               : "border-stone-200 bg-stone-50/50 hover:border-stone-300 hover:bg-white hover:shadow-md"
-                          }`}
+                            }`}
                           style={
                             selectedAmount.amount === option.amount
                               ? {
-                                  backgroundColor: theme.primary,
-                                  borderColor: theme.primary,
-                                  boxShadow: `0 20px 25px -5px ${theme.primary}33`,
-                                }
+                                backgroundColor: theme.primary,
+                                borderColor: theme.primary,
+                                boxShadow: `0 20px 25px -5px ${theme.primary}33`,
+                              }
                               : {}
                           }
                         >
@@ -447,11 +449,10 @@ export default function SupportPage() {
                               )}
                             </div>
                             <span
-                              className={`font-bold text-sm ${
-                                selectedAmount.amount === option.amount
+                              className={`font-bold text-sm ${selectedAmount.amount === option.amount
                                   ? "text-white"
                                   : "text-stone-700"
-                              }`}
+                                }`}
                             >
                               {option.label}
                             </span>
@@ -472,24 +473,22 @@ export default function SupportPage() {
                         value={supporterName}
                         onChange={(e) => setSupporterName(e.target.value)}
                         disabled={isAnonymous}
-                        className={`w-full h-14 pl-12 pr-4 text-base rounded-xl border-stone-200 bg-stone-50/80 focus:bg-white transition-all ${
-                          isAnonymous ? "opacity-40 line-through" : ""
-                        }`}
+                        className={`w-full h-14 pl-12 pr-4 text-base rounded-xl border-stone-200 bg-stone-50/80 focus:bg-white transition-all ${isAnonymous ? "opacity-40 line-through" : ""
+                          }`}
                       />
                     </div>
                     <button
                       onClick={() => setIsAnonymous(!isAnonymous)}
-                      className={`h-14 px-5 rounded-xl border-2 transition-all duration-200 flex items-center justify-center gap-2.5 font-medium whitespace-nowrap ${
-                        isAnonymous
+                      className={`h-14 px-5 rounded-xl border-2 transition-all duration-200 flex items-center justify-center gap-2.5 font-medium whitespace-nowrap ${isAnonymous
                           ? "text-white"
                           : "border-stone-200 bg-white text-stone-600 hover:border-stone-300"
-                      }`}
+                        }`}
                       style={
                         isAnonymous
                           ? {
-                              backgroundColor: theme.primary,
-                              borderColor: theme.primary,
-                            }
+                            backgroundColor: theme.primary,
+                            borderColor: theme.primary,
+                          }
                           : {}
                       }
                     >
@@ -563,11 +562,10 @@ export default function SupportPage() {
                     <div className="flex items-start gap-4">
                       <Avatar className="w-11 h-11 ring-2 ring-white shadow-md">
                         <AvatarFallback
-                          className={`text-sm font-bold ${
-                            supporter.isAnonymous
+                          className={`text-sm font-bold ${supporter.isAnonymous
                               ? "bg-stone-100 text-stone-400"
                               : "bg-linear-to-br from-amber-100 to-orange-100 text-amber-700"
-                          }`}
+                            }`}
                         >
                           {supporter.isAnonymous
                             ? "?"
@@ -704,43 +702,43 @@ export default function SupportPage() {
                 <div className="grid grid-cols-4 gap-1.5">
                   {deepLinks.length > 0
                     ? deepLinks.map((link) => (
-                        <a
-                          key={link.name}
-                          href={link.link}
-                          className="flex flex-col items-center gap-1 p-1.5 sm:p-2 rounded-xl bg-stone-50 hover:bg-stone-100 border border-transparent hover:border-stone-200 transition-all duration-200 hover:shadow-md active:scale-95"
-                        >
-                          {link.logo ? (
-                            <img
-                              src={link.logo}
-                              alt={link.name}
-                              className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg shadow"
-                            />
-                          ) : (
-                            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-stone-300 flex items-center justify-center text-white font-bold text-[10px] shadow">
-                              {link.name.charAt(0)}
-                            </div>
-                          )}
-                          <span className="text-[9px] sm:text-[10px] text-stone-500 font-medium truncate w-full text-center leading-tight">
-                            {link.description || link.name}
-                          </span>
-                        </a>
-                      ))
-                    : BANK_APPS.map((bank) => (
-                        <div
-                          key={bank.name}
-                          className="flex flex-col items-center gap-1 p-1.5 sm:p-2 rounded-xl bg-stone-50 border border-transparent opacity-50"
-                        >
-                          <div
-                            className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center text-white font-bold text-[10px] shadow"
-                            style={{ backgroundColor: bank.color }}
-                          >
-                            {bank.short}
+                      <a
+                        key={link.name}
+                        href={link.link}
+                        className="flex flex-col items-center gap-1 p-1.5 sm:p-2 rounded-xl bg-stone-50 hover:bg-stone-100 border border-transparent hover:border-stone-200 transition-all duration-200 hover:shadow-md active:scale-95"
+                      >
+                        {link.logo ? (
+                          <img
+                            src={link.logo}
+                            alt={link.name}
+                            className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg shadow"
+                          />
+                        ) : (
+                          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-stone-300 flex items-center justify-center text-white font-bold text-[10px] shadow">
+                            {link.name.charAt(0)}
                           </div>
-                          <span className="text-[9px] sm:text-[10px] text-stone-500 font-medium truncate w-full text-center">
-                            {bank.name}
-                          </span>
+                        )}
+                        <span className="text-[9px] sm:text-[10px] text-stone-500 font-medium truncate w-full text-center leading-tight">
+                          {link.description || link.name}
+                        </span>
+                      </a>
+                    ))
+                    : BANK_APPS.map((bank) => (
+                      <div
+                        key={bank.name}
+                        className="flex flex-col items-center gap-1 p-1.5 sm:p-2 rounded-xl bg-stone-50 border border-transparent opacity-50"
+                      >
+                        <div
+                          className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center text-white font-bold text-[10px] shadow"
+                          style={{ backgroundColor: bank.color }}
+                        >
+                          {bank.short}
                         </div>
-                      ))}
+                        <span className="text-[9px] sm:text-[10px] text-stone-500 font-medium truncate w-full text-center">
+                          {bank.name}
+                        </span>
+                      </div>
+                    ))}
                 </div>
 
                 {/* Not paid yet notification */}
