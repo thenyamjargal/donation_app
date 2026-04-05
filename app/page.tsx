@@ -284,7 +284,7 @@ export default function SupportPage() {
                   href={process.env.NEXT_PUBLIC_INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-xl bg-white/80 backdrop-blur-sm border border-stone-200/80 flex items-center justify-center hover:bg-white hover:scale-105 hover:shadow-lg transition-all duration-300"
+                  className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] backdrop-blur-sm border border-stone-200/80 flex items-center justify-center hover:bg-white hover:scale-105 hover:shadow-lg transition-all duration-300"
                 >
                   <Instagram className="w-4.5 h-4.5 text-stone-600" />
                 </a>
