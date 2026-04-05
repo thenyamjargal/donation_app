@@ -274,7 +274,7 @@ export default function SupportPage() {
                   href={process.env.NEXT_PUBLIC_YOUTUBE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-xlflex items-center justify-center hover:bg-white hover:scale-105 hover:shadow-lg transition-all duration-300"
+                  className="w-10 h-10 rounded-xl flex items-center justify-center hover:bg-white hover:scale-105 hover:shadow-lg transition-all duration-300"
                   style={{
                     background: '#ff0000',
                   }}
