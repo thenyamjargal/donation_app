@@ -274,9 +274,12 @@ export default function SupportPage() {
                   href={process.env.NEXT_PUBLIC_YOUTUBE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-xl bg-white/80 backdrop-blur-sm border border-stone-200/80 flex items-center justify-center hover:bg-white hover:scale-105 hover:shadow-lg transition-all duration-300"
+                  className="w-10 h-10 rounded-xlflex items-center justify-center hover:bg-white hover:scale-105 hover:shadow-lg transition-all duration-300"
+                  style={{
+                    background: '#ff0000',
+                  }}
                 >
-                  <Youtube className="w-4.5 h-4.5 text-stone-600" />
+                  <Youtube className="w-4.5 h-4.5 text-white" />
                 </a>
               )}
               {process.env.NEXT_PUBLIC_INSTAGRAM_URL && (
@@ -297,9 +300,12 @@ export default function SupportPage() {
                   href={process.env.NEXT_PUBLIC_FACEBOOK_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-xl bg-white/80 backdrop-blur-sm border border-stone-200/80 flex items-center justify-center hover:bg-white hover:scale-105 hover:shadow-lg transition-all duration-300"
+                  className="w-10 h-10 rounded-xl flex items-center justify-center hover:bg-white hover:scale-105 hover:shadow-lg transition-all duration-300"
+                  style={{
+                    background: '#1877F2',
+                  }}
                 >
-                  <Facebook className="w-4.5 h-4.5 text-stone-600" />
+                  <Facebook className="w-4.5 h-4.5 text-white" />
                 </a>
               )}
             </div>
@@ -417,8 +423,8 @@ export default function SupportPage() {
                           key={option.amount}
                           onClick={() => setSelectedAmount(option)}
                           className={`relative p-3 sm:p-3 rounded-2xl border-2 transition-all duration-300 ${selectedAmount.amount === option.amount
-                              ? "scale-[1.02]"
-                              : "border-stone-200 bg-stone-50/50 hover:border-stone-300 hover:bg-white hover:shadow-md"
+                            ? "scale-[1.02]"
+                            : "border-stone-200 bg-stone-50/50 hover:border-stone-300 hover:bg-white hover:shadow-md"
                             }`}
                           style={
                             selectedAmount.amount === option.amount
@@ -450,8 +456,8 @@ export default function SupportPage() {
                             </div>
                             <span
                               className={`font-bold text-sm ${selectedAmount.amount === option.amount
-                                  ? "text-white"
-                                  : "text-stone-700"
+                                ? "text-white"
+                                : "text-stone-700"
                                 }`}
                             >
                               {option.label}
@@ -480,8 +486,8 @@ export default function SupportPage() {
                     <button
                       onClick={() => setIsAnonymous(!isAnonymous)}
                       className={`h-14 px-5 rounded-xl border-2 transition-all duration-200 flex items-center justify-center gap-2.5 font-medium whitespace-nowrap ${isAnonymous
-                          ? "text-white"
-                          : "border-stone-200 bg-white text-stone-600 hover:border-stone-300"
+                        ? "text-white"
+                        : "border-stone-200 bg-white text-stone-600 hover:border-stone-300"
                         }`}
                       style={
                         isAnonymous
@@ -563,8 +569,8 @@ export default function SupportPage() {
                       <Avatar className="w-11 h-11 ring-2 ring-white shadow-md">
                         <AvatarFallback
                           className={`text-sm font-bold ${supporter.isAnonymous
-                              ? "bg-stone-100 text-stone-400"
-                              : "bg-linear-to-br from-amber-100 to-orange-100 text-amber-700"
+                            ? "bg-stone-100 text-stone-400"
+                            : "bg-linear-to-br from-amber-100 to-orange-100 text-amber-700"
                             }`}
                         >
                           {supporter.isAnonymous
